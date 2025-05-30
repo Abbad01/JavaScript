@@ -3,14 +3,19 @@
 //ECMAScript, js documentation.
 
 
-//primitve datatypes
-/* number:2^53
-bigint
-string:"gvgchh"
-boolean:true/false
+/*Based on how data are stroed and how they are accessed,
+we classify datatypes as primitive and non primitve. */
+
+/*primitve datatypes(call by value, given a copy of 
+original data, changes u make is not reflected in original value)*/
+
+/* Number:2^53
+BigInt
+String:"gvgchh"
+Boolean:true/false
 null:standalone value, khaali hai, it is an object
 undefined:value is not assigned
-symbol:unique */
+Symbol:unique */
 
-//non primitive datatypes
-//object
+//non primitive datatypes(call by reference, return type is object)
+//object,Array, Functions

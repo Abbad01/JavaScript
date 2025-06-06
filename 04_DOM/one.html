@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM LEARNING</title>
+    
+</head>
+<body>
+    <div class="bg-black">
+        <h1 class="heading">DOM learning on Chai aur Code</h1>
+        <p>Lorem ipsum, dolor sit amet. </p>
+    </div>
+    <script>
+       let headin= document.getElementsByClassName('.heading');
+       console.log(headin);
+    </script>
+    <!-- Html collection is not an array but very similar to 
+     array-->
+     <!--
+     let temp=document.getElementById()
+     document.getElementById('title').id
+     document.getElementById('title').className
+     document.getElementById('title').getAttribute('class')
+     document.getElementById('title').setAttribute('class','test')
+
+     document.getElementByClassName()
+
+     STYLING
+
+      temp.style.backgroundColor='green'
+      temp.style.padding="15px"
+
+      ADDING CONTENT
+
+      temp.textContent  give access to whole content even if it is hidden
+      temp.innerHTML
+      temp.innerText
+
+      QUERY-SELECTOR
+
+      document.querySelector('h1') access to first h1 of webpage
+      document.querySelector('#title') id
+      document.querySelector('.heading') class
+
+
+      let tempList=document.querySelectorAll('li')
+      will give NodeList, not an array but very similar to array
+      templist[0].style.color="green"  will give green to first list item
+
+
+      let tempClassList=document.getElementByClassName('list-item')
+      will give HTML collection which is different from NodeList
+
+      convert it to array
+      Array.from(tempClassList)
+      now u can apply each methods of array on tempClassList
+     -->
+
+
+     <!--    PARENT_CHILD RELATION
+
+     <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+
+     </div>
+     
+     const Parent=document.querySelector('.parent')
+     console.log(Parent.children)  HTML collection, u can run for loop on it 
+     console.log(Parent.children[1].innerHTML)
+     console.log(Parent.firstElementChild)  complete div of first child
+
+     const dayOne=document.querySelector('.day')
+     console.log(dayOne.parentElement)  to get to parent from child
+     console.log(dayOne.nextElementSibling)
+
+     //CHILD-NODES
+     every element inside parent is childnode even an empty line
+
+     console.log("Nodes are", Parent.childNodes)
+
+     //crrate element
+
+     const div=document.createElement('div')
+     console.log(div);
+     div.clasName='main'
+     div.id=Math.round(Math.random()*10+1)
+     div.setAttribute("title", "genertated title")
+     div.style.backgroundColor="green"
+     div.innerText="chai aur code" it takes down the value and overwrite it, 
+     therefore not preferred from optimisation pov
+
+     instead use this to add text
+     const addText=document.createTextNode("Chai aur code");
+     div.appendChild(addText);
+     document.body.appendChild(div)
+
+
+     EXample
+
+     function addLanguage(langName){
+     const li=document.createElement('li');
+     li.appendChild(document.createTextNode(langName));
+     document.querySelector('.language').appendChild(li)
+     }
+     addLanguage('goLang');
+     addLanguage('python');
+
+     //EDIT
+     const secondLang=document.querySelector("li:nth-child(2)");
+     const newli=document.createElement('li')
+     newli.textContent="java"
+     secondLang.replaceWith(newli);
+
+     //REMOVE
+     const lastLang=document.querySelector('li:last-child')
+     lastLang.remove()
+
+     -->
+</body>
+</html>

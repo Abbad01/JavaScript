@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="width:100vw ;height:100vh">
+       <div id="pehla" style="width:50% ;height:25%; background-color: blue; color:white" >1st one</div>
+       <div id="doosra" style="width:50% ;height:25%; background-color: green;color:white ">2nd one</div>
+       <div id="teesra" style="width:50% ;height:25%; background-color:red;color:white ">3rd one</div>
+       <div id="fourth" style="width:50% ;height:25%; background-color: purple;color:white ">4th one</div>
+</body>
+<script>
+        // document.getElementById('pehla').onmouseover=()=>{
+        //     alert("mouse hovered");
+        // }
+
+        //important
+         document.getElementById('doosra').addEventListener('mouseover',(e)=>{
+            // alert("mouse is hovered");
+            console.log(e);//study in console
+         },false)
+
+/*  
+🔁 Event Flow: Capturing vs Bubbling
+1.When an event like mouseover occurs on an element:
+
+2.The event starts at the root of the DOM tree (document)
+
+3.It travels downward to the target — this is the capturing phase
+
+4.Then it fires on the target element itself
+
+5.Then it bubbles upward back through the ancestors — this is the bubbling phase 
+
+✅ The false means:
+"Attach this event listener during the bubbling phase of the event flow."
+
+💡 When would you use true?
+“Call this listener while the event is going down the DOM tree — during the capturing phase.”
+
+🔹 2. Control and Flexibility
+Event bubbling lets you:
+
+Intercept events at different levels
+
+Decide when to allow or stop the event from going up
+
+You can even stop it:
+e.stopPropagation(); // stops the bubbling
+*/
+/*
+         What to study
+         type, timestamp,preventDefault, target, toElement,srcElement,
+         currentTarget, clientX, clientY,screenX,ScreenY,altkey,ctrlkey,shiftkey,keycode
+
+*/
+
+/*
+        e.target.parentNode
+        e.target.parentNode.remove()
+        .removeChild()
+        e.target.tagName=='IMG'
+*/
+
+
+    </script>
+</html>

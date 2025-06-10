@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text"> CHAI AUR CODE</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+const changeText=()=>{
+    document.getElementById("text").
+    innerHTML="ABBAD IS CODING";
+}
+const changing=setTimeout(changeText,3000);
+document.getElementById("stop").
+addEventListener('click',()=>{
+    clearTimeout(changing);//text will not change if we press stop button
+})
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/output.css">
+    <title>COLOR CHANGING MOUSE</title>
+</head>
+<body class="h-screen w-full flex items-center justify-center">
+    <div id="center"class="md:w-1/2 md:h-1/2 border-2 border-black"></div>
+</body>
+<script>
+    let rect = document.querySelector("#center");
+
+rect.addEventListener('mousemove', (mouse) => {
+   let rectLocation= rect.getBoundingClientRect();
+    let insideRectVal=mouse.clientX-rectLocation.left;
+    if(insideRectVal<rectLocation.width/2){
+        let percent=insideRectVal/(rectLocation.width/2);
+        const redVal=Math.max(0,Math.round(255*(1-(Math.max(percent,0)))));
+        rect.style.backgroundColor = `rgb(${redVal}, 0,0)`;
+    }
+    else{
+        let percent=(rectLocation.width/2)/insideRectVal;
+        const blueVal=Math.max(0,Math.round(255*(1-(Math.max(percent,0)))));
+        rect.style.backgroundColor = `rgb(0, 0,${blueVal})`;
+    }
+    rect.addEventListener("mouseleave",()=>{
+        rect.style.backgroundColor="";
+    })
+});
+
+</script>
+</html>

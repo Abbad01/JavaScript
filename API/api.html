@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const requestUrl='https://api.github/users/hiteshchoudhary'
+    const xhr=new XMLHttpRequest();//object
+    xhr.open("GET", requestUrl)
+    xhr.onreadystatechange=()=>{
+       console.log(xhr.readyState);
+       if(xhr.readyState===4){
+        
+        const data=JSON.parse(this.responseText);
+        console.log(data);//type is String therefore using Json.parse to convert it to object
+        console.log(data.followers);
+       } 
+    }
+
+
+
+
+
+
+
+    /*🔷 What is an API?
+API stands for Application Programming Interface.
+It is a set of rules and protocols that allows one software application to communicate with another.
+
+Think of an API as a messenger that takes requests, tells a system what to do, and returns the response.
+
+🔹 Why Do We Use APIs?
+To access data or services from another system or app.
+
+To separate frontend and backend code in web applications.
+
+To enable modular development where different teams work on different parts (e.g., one on UI, another on backend).
+
+To use third-party services like:
+
+Weather APIs (get current weather)
+
+Google Maps API
+
+Payment APIs (Stripe, PayPal)
+
+Social login APIs (Google, Facebook)
+
+🔸 Types of APIs
+1. Web APIs
+These are exposed over the web using HTTP/HTTPS protocols.
+
+Example:
+GET https://api.example.com/users
+
+2. Library APIs
+Provided by libraries (e.g., DOM API in JavaScript). You use them locally within your app.
+
+Example:
+document.querySelector('#btn')
+
+3. Operating System APIs
+Used to interact with OS-level features (e.g., file system, devices).
+
+
+*/
+</script>
+</html>
